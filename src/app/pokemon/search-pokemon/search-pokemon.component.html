@@ -1,0 +1,11 @@
+<div class="col-6 mx-auto">
+    <input type="text" #searchBox (keyup)="search(searchBox.value)" placeholder="Rechercher un pokémon..">
+    <div class="collection">
+        <ul>
+            <li *ngFor="let pokemon of pokemons$ | async" (click)="goToDetail(pokemon)">
+                <img [src]="pokemon.picture" alt="{{ pokemon.name }} Image" width="50" height="50">
+                <span>{{ pokemon.name }}</span>
+              </li>
+        </ul>
+    </div>
+</div>
